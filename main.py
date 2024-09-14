@@ -1,6 +1,8 @@
 from secondmlProject import logger
 from secondmlProject.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from secondmlProject.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
+from secondmlProject.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
+
 
 STAGE_NAME= "Data Ingestion stage"
 
@@ -22,6 +24,18 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
+
+STAGE_NAME= "Data Transformation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_transformation = DataTransformationTrainingPipeline()
+    data_transformation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
 
 
 
