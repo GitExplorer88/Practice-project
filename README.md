@@ -19,3 +19,6 @@ conda activate secondmlproj
 
    bash
 pip install -r requirements.txt
+
+
+588738575177.dkr.ecr.us-east-1.amazonaws.com/secondmlproject
